@@ -18,7 +18,6 @@ public class MainMenuPanel extends JPanel {
 	private JButton btnAbout;
 	
 	private JFrame frame;
-	private GamePanel actualGame;
 	
 	public MainMenuPanel(final JFrame frame) {
 		this.frame = frame;
@@ -32,7 +31,7 @@ public class MainMenuPanel extends JPanel {
 		btnNewGame.setBackground(Color.LIGHT_GRAY);
 		btnNewGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				removeThis();
+				newGame();
 			}
 		});
 		springLayout.putConstraint(SpringLayout.WEST, btnNewGame, 169, SpringLayout.WEST, this);
@@ -40,6 +39,11 @@ public class MainMenuPanel extends JPanel {
 		add(btnNewGame);
 		
 		btnHowToPlay = new JButton("How to Play");
+		btnHowToPlay.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				howToPlay();
+			}
+		});
 		springLayout.putConstraint(SpringLayout.NORTH, btnHowToPlay, 6, SpringLayout.SOUTH, btnNewGame);
 		springLayout.putConstraint(SpringLayout.WEST, btnHowToPlay, 0, SpringLayout.WEST, btnNewGame);
 		springLayout.putConstraint(SpringLayout.SOUTH, btnHowToPlay, -219, SpringLayout.SOUTH, this);
@@ -49,6 +53,11 @@ public class MainMenuPanel extends JPanel {
 		add(btnHowToPlay);
 		
 		btnAbout = new JButton("About");
+		btnAbout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				about();
+			}
+		});
 		springLayout.putConstraint(SpringLayout.NORTH, btnAbout, 4, SpringLayout.SOUTH, btnHowToPlay);
 		springLayout.putConstraint(SpringLayout.WEST, btnAbout, 0, SpringLayout.WEST, btnNewGame);
 		springLayout.putConstraint(SpringLayout.SOUTH, btnAbout, -177, SpringLayout.SOUTH, this);
@@ -86,13 +95,34 @@ public class MainMenuPanel extends JPanel {
 		add(lblToe);
 	}
 	
-	private void removeThis() {
+	private void newGame() {
 		// remove main menu
 		frame.getContentPane().remove(this);
 		
 		// game grid
-		actualGame = new GamePanel(frame);
-		frame.getContentPane().add(actualGame, BorderLayout.CENTER);
+		frame.getContentPane().add(new GamePanel(frame), BorderLayout.CENTER);
+		
+		frame.repaint();
+		frame.revalidate();
+	}
+	
+	private void howToPlay() {
+		// remove main menu
+		frame.getContentPane().remove(this);
+		
+		// how to play
+		frame.getContentPane().add(new HowToPlayPanel(frame), BorderLayout.CENTER);
+		
+		frame.repaint();
+		frame.revalidate();
+	}
+	
+	private void about() {
+		// remove main menu
+		frame.getContentPane().remove(this);
+		
+		// about
+		frame.getContentPane().add(new AboutPanel(frame), BorderLayout.CENTER);
 		
 		frame.repaint();
 		frame.revalidate();

@@ -13,16 +13,13 @@ import javax.swing.UIManager.*;
 import java.awt.Font;
 
 public class MainFrame extends JFrame {
-	private MainMenuPanel mainMenu;
-	private GamePanel actualGame;
-	
 	public MainFrame() {
+		setTitle("Tic Tac Toe");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
 		setSize(480, 485);
 		
-		mainMenu = new MainMenuPanel(this);
-		add(mainMenu);
+		getContentPane().add(new MainMenuPanel(this));
 		
 		/** NIMBUS LOOK AND FEEL SHITS */
 		try {
