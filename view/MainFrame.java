@@ -14,13 +14,6 @@ import java.awt.Font;
 
 public class MainFrame extends JFrame {
 	public MainFrame() {
-		setTitle("Tic Tac Toe");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setResizable(false);
-		setSize(480, 485);
-		
-		getContentPane().add(new MainMenuPanel(this));
-		
 		/** NIMBUS LOOK AND FEEL SHITS */
 		try {
 		    for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
@@ -33,7 +26,11 @@ public class MainFrame extends JFrame {
 		    // If Nimbus is not available, you can set the GUI to another look and feel.
 		}
 		
-		repaint();
-		revalidate();
+		setTitle("Tic Tac Toe");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setResizable(false);
+		setSize(480, 485);
+		
+		getContentPane().add(new MainMenuPanel(this));
 	}
 }
