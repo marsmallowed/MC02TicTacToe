@@ -42,8 +42,8 @@ public class MainMenu extends JPanel {
 		/** ACTION LISTENERS */
 		btnNewGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				GameGrid board = new GameGrid();
-				board.setVisible(true);
+				GamePanel gamePanel = new GamePanel();
+				gamePanel.setVisible(true);
 			}	
 		});
 	}

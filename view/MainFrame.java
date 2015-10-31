@@ -22,13 +22,10 @@ public class MainFrame extends JFrame {
 	private JButton btnHowToPlay;
 	private JButton btnAbout;
 	
-	private JPanel gameMenuBar;
-	private GameGrid board;
-	private JLabel playerIndicator;
-	private JLabel player;
-	
+	private GamePanel actualGame;
 	
 	public MainFrame() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
 		setSize(480, 485);
 		mainMenu = new JPanel();
@@ -92,25 +89,15 @@ public class MainFrame extends JFrame {
 		lblToe.setForeground(Color.RED);
 		mainMenu.add(lblToe);
 		
-		board = new GameGrid();
-		gameMenuBar = new JPanel();
-		
 		/** ACTION LISTENERS */
 		btnNewGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// remove main menu
 				getContentPane().remove(mainMenu);
 				
-				// menu bar
-				gameMenuBar.setLayout(new GridLayout(1, 3, 0, 0));
-				playerIndicator = new JLabel("Player:");
-				player = new JLabel();
-				gameMenuBar.add(playerIndicator);
-				gameMenuBar.add(player);
-				getContentPane().add(gameMenuBar, BorderLayout.NORTH);
-				
 				// game grid
-				getContentPane().add(board, BorderLayout.CENTER);
+				actualGame = new GamePanel();
+				getContentPane().add(actualGame, BorderLayout.CENTER);
 				
 				repaint();
 				revalidate();
