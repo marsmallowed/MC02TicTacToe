@@ -6,6 +6,7 @@ import model.Game;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class GameGrid extends JPanel {
 	private JButton btn00;
@@ -23,6 +24,7 @@ public class GameGrid extends JPanel {
 		setLayout(new GridLayout(3, 3, 0, 0));
 		
 		btn00 = new JButton("");
+		btn00.setFont(new Font("Tahoma", Font.BOLD, 32));
 		btn00.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btn00.setText(gamePlay.getCurrPlayer());
@@ -36,6 +38,7 @@ public class GameGrid extends JPanel {
 		add(btn00);
 		
 		btn01 = new JButton("");
+		btn01.setFont(new Font("Tahoma", Font.BOLD, 32));
 		btn01.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btn01.setText(gamePlay.getCurrPlayer());
@@ -49,6 +52,7 @@ public class GameGrid extends JPanel {
 		add(btn01);
 		
 		btn02 = new JButton("");
+		btn02.setFont(new Font("Tahoma", Font.BOLD, 32));
 		btn02.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btn02.setText(gamePlay.getCurrPlayer());
@@ -62,6 +66,7 @@ public class GameGrid extends JPanel {
 		add(btn02);
 		
 		btn10 = new JButton("");
+		btn10.setFont(new Font("Tahoma", Font.BOLD, 32));
 		btn10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btn10.setText(gamePlay.getCurrPlayer());
@@ -75,6 +80,7 @@ public class GameGrid extends JPanel {
 		add(btn10);
 		
 		btn11 = new JButton("");
+		btn11.setFont(new Font("Tahoma", Font.BOLD, 32));
 		btn11.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btn11.setText(gamePlay.getCurrPlayer());
@@ -88,6 +94,7 @@ public class GameGrid extends JPanel {
 		add(btn11);
 		
 		btn12 = new JButton("");
+		btn12.setFont(new Font("Tahoma", Font.BOLD, 32));
 		btn12.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btn12.setText(gamePlay.getCurrPlayer());
@@ -101,6 +108,7 @@ public class GameGrid extends JPanel {
 		add(btn12);
 		
 		btn20 = new JButton("");
+		btn20.setFont(new Font("Tahoma", Font.BOLD, 32));
 		btn20.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btn20.setText(gamePlay.getCurrPlayer());
@@ -114,6 +122,7 @@ public class GameGrid extends JPanel {
 		add(btn20);
 		
 		btn21 = new JButton("");
+		btn21.setFont(new Font("Tahoma", Font.BOLD, 32));
 		btn21.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btn21.setText(gamePlay.getCurrPlayer());
@@ -127,6 +136,7 @@ public class GameGrid extends JPanel {
 		add(btn21);
 		
 		btn22 = new JButton("");
+		btn22.setFont(new Font("Tahoma", Font.BOLD, 32));
 		btn22.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btn22.setText(gamePlay.getCurrPlayer());

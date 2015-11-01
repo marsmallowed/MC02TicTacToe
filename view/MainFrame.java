@@ -14,6 +14,7 @@ import java.awt.Font;
 
 public class MainFrame extends JFrame {
 	public MainFrame() {
+		setResizable(false);
 		/** NIMBUS LOOK AND FEEL SHITS */
 		try {
 		    for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
@@ -28,7 +29,6 @@ public class MainFrame extends JFrame {
 		
 		setTitle("Tic Tac Toe");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setResizable(false);
 		setSize(480, 485);
 		
 		getContentPane().add(new MainMenuPanel(this));

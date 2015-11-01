@@ -26,8 +26,6 @@ public class Game {
 					occupied++;
 			}
 		}
-		System.out.println("Occupied: " + occupied);
-		
 		return occupied;
 	}
 	
@@ -50,38 +48,38 @@ public class Game {
 	
 	public boolean isGameOver() {
 		// check for horizontal patterns
-		System.out.println("CHECKING HORIZONTAL...");
+		System.out.println("Checking --...");
 		for (int i = 0; i < 7; i+=3) {
 			if (grid[i] == grid[i+1] && grid[i+1] == grid[i+2] && grid[i] != " ") {
 				winner = grid[i];
-				System.out.println("THERE'S A WINNER!!");
+				System.out.println("THERE'S A WINNER!! " + winner);
 				return true;
 			}
 		}
 		
 		// check for vertical patterns
-		System.out.println("CHECKING VERTICAL...");
+		System.out.println("Checking |...");
 		for (int i = 0; i < 3; i++) {
 			if (grid[i] == grid[i+3] && grid[i+3] == grid[i+6] && grid[i] != " ") {
 				winner = grid[i];
-				System.out.println("THERE'S A WINNER!!");
+				System.out.println("THERE'S A WINNER!! " + winner);
 				return true;
 			}
 		}
 		
 		// check for diagonal \ patterns
-		System.out.println("CHECKING \\...");
-		if (grid[0] == grid[3] && grid[3] == grid[7] && grid[0] != " ") {
+		System.out.println("Checking \\...");
+		if (grid[0] == grid[4] && grid[4] == grid[8] && grid[0] != " ") {
 			winner = grid[0];
-			System.out.println("THERE'S A WINNER!!");
+			System.out.println("THERE'S A WINNER!! " + winner);
 			return true;
 		}
 		
 		// check for diagonal / patterns
-		System.out.println("CHECKING /...");
+		System.out.println("Checking /...");
 		if (grid[2] == grid[4] && grid[4] == grid[6] && grid[2] != " ") {
 			winner = grid[2];
-			System.out.println("THERE'S A WINNER!!");
+			System.out.println("THERE'S A WINNER!! " + winner);
 			return true;
 		}
 		

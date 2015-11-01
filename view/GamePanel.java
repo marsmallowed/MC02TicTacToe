@@ -74,11 +74,12 @@ public class GamePanel extends JPanel{
 	public void checkGame() {
 		// when game over with no winner
 		System.out.println("Checking for winner...");
-		if (gamePlay.isGameOver() && gamePlay.getWinner() == "") {
-			JOptionPane.showMessageDialog(new JFrame(), "GAME OVER! No winner. :(");
-			back();
-		} else if (gamePlay.isGameOver()) {
-			JOptionPane.showMessageDialog(new JFrame(), "Player " + gamePlay.getWinner() + " wins!");
+		if (gamePlay.isGameOver()) {
+			if (gamePlay.getWinner() == "")
+				JOptionPane.showMessageDialog(new JFrame(), "GAME OVER! No winner. :(");
+			else 
+				JOptionPane.showMessageDialog(new JFrame(), "Player " + gamePlay.getWinner() + " wins!");
+			
 			back();
 		}
 	}
@@ -86,9 +87,6 @@ public class GamePanel extends JPanel{
 	private void newGame() {
 		frame.remove(this);
 		frame.getContentPane().add(new GamePanel(frame));
-		
-//		gamePlay = new Game("x", "o");
-//		grid = new GameGrid(this, gamePlay);
 		
 		frame.repaint();
 		frame.revalidate();

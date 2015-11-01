@@ -26,7 +26,7 @@ public class MainMenuPanel extends JPanel {
 		setLayout(springLayout);
 		
 		btnNewGame = new JButton("New Game");
-		springLayout.putConstraint(SpringLayout.SOUTH, btnNewGame, -263, SpringLayout.SOUTH, this);
+		springLayout.putConstraint(SpringLayout.NORTH, btnNewGame, 146, SpringLayout.NORTH, this);
 		btnNewGame.setForeground(Color.DARK_GRAY);
 		btnNewGame.setBackground(Color.LIGHT_GRAY);
 		btnNewGame.addActionListener(new ActionListener() {
@@ -39,12 +39,13 @@ public class MainMenuPanel extends JPanel {
 		add(btnNewGame);
 		
 		btnHowToPlay = new JButton("How to Play");
+		springLayout.putConstraint(SpringLayout.NORTH, btnHowToPlay, 190, SpringLayout.NORTH, this);
+		springLayout.putConstraint(SpringLayout.SOUTH, btnNewGame, -6, SpringLayout.NORTH, btnHowToPlay);
 		btnHowToPlay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				howToPlay();
 			}
 		});
-		springLayout.putConstraint(SpringLayout.NORTH, btnHowToPlay, 6, SpringLayout.SOUTH, btnNewGame);
 		springLayout.putConstraint(SpringLayout.WEST, btnHowToPlay, 0, SpringLayout.WEST, btnNewGame);
 		springLayout.putConstraint(SpringLayout.SOUTH, btnHowToPlay, -219, SpringLayout.SOUTH, this);
 		springLayout.putConstraint(SpringLayout.EAST, btnHowToPlay, -177, SpringLayout.EAST, this);
@@ -67,28 +68,27 @@ public class MainMenuPanel extends JPanel {
 		add(btnAbout);
 		
 		lblTic = new JLabel("Tic");
-		springLayout.putConstraint(SpringLayout.NORTH, btnNewGame, 6, SpringLayout.SOUTH, lblTic);
-		springLayout.putConstraint(SpringLayout.SOUTH, lblTic, -307, SpringLayout.SOUTH, this);
 		springLayout.putConstraint(SpringLayout.NORTH, lblTic, 110, SpringLayout.NORTH, this);
-		springLayout.putConstraint(SpringLayout.WEST, lblTic, 169, SpringLayout.WEST, this);
+		springLayout.putConstraint(SpringLayout.WEST, lblTic, 0, SpringLayout.WEST, btnNewGame);
+		springLayout.putConstraint(SpringLayout.SOUTH, lblTic, -6, SpringLayout.NORTH, btnNewGame);
+		springLayout.putConstraint(SpringLayout.EAST, lblTic, -267, SpringLayout.EAST, this);
 		lblTic.setFont(new Font("Lobster 1.3", Font.ITALIC, 28));
 		lblTic.setForeground(Color.RED);
 		add(lblTic);
 		
 		lblTac = new JLabel("Tac");
-		springLayout.putConstraint(SpringLayout.NORTH, lblTac, 111, SpringLayout.NORTH, this);
-		springLayout.putConstraint(SpringLayout.WEST, lblTac, 214, SpringLayout.WEST, this);
-		springLayout.putConstraint(SpringLayout.SOUTH, lblTac, -8, SpringLayout.NORTH, btnNewGame);
-		springLayout.putConstraint(SpringLayout.EAST, lblTic, -6, SpringLayout.WEST, lblTac);
+		springLayout.putConstraint(SpringLayout.NORTH, lblTac, 2, SpringLayout.NORTH, lblTic);
+		springLayout.putConstraint(SpringLayout.WEST, lblTac, 6, SpringLayout.EAST, lblTic);
+		springLayout.putConstraint(SpringLayout.SOUTH, lblTac, -7, SpringLayout.NORTH, btnNewGame);
 		springLayout.putConstraint(SpringLayout.EAST, lblTac, -222, SpringLayout.EAST, this);
 		lblTac.setFont(new Font("Lobster 1.3", Font.ITALIC, 28));
 		lblTac.setForeground(Color.BLACK);
 		add(lblTac);
 		
 		lblToe = new JLabel("Toe");
-		springLayout.putConstraint(SpringLayout.NORTH, lblToe, 111, SpringLayout.NORTH, this);
+		springLayout.putConstraint(SpringLayout.NORTH, lblToe, 2, SpringLayout.NORTH, lblTic);
 		springLayout.putConstraint(SpringLayout.WEST, lblToe, 6, SpringLayout.EAST, lblTac);
-		springLayout.putConstraint(SpringLayout.SOUTH, lblToe, -8, SpringLayout.NORTH, btnNewGame);
+		springLayout.putConstraint(SpringLayout.SOUTH, lblToe, -7, SpringLayout.NORTH, btnNewGame);
 		springLayout.putConstraint(SpringLayout.EAST, lblToe, -177, SpringLayout.EAST, this);
 		lblToe.setFont(new Font("Lobster 1.3", Font.ITALIC, 28));
 		lblToe.setForeground(Color.RED);
